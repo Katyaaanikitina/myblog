@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-control"
+         [ngClass]="{invalid: form.get('title')?.touched && form.get('title')?.invalid}"
+    >
+        <label for="title">Post title:</label>
+        <input id="title" type="text" formControlName="title">
+        <div *ngIf="form.get('title')?.touched && form.get('title')?.errors?.['required']">
+            <small>Title is required!</small>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label for="text">Post content:</label>
+    </div>
+
+    <div class="form-control"
+         [ngClass]="{invalid: form.get('author')?.touched && form.get('author')?.invalid}"
+    >
+        <label for="author">Author:</label>
+        <input id="author" type="text" formControlName="author">
+        <div *ngIf="form.get('author')?.touched && form.get('author')?.errors?.['required']">
+            <small>Author is required!</small>
+        </div>
+    </div>
+
+    <button type="submit"
+            class="btn btn-dark btn-block"
+            [disabled]="form.invalid"
+    >Submit</button>
+</form>
