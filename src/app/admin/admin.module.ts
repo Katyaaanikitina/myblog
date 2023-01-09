@@ -37,8 +37,7 @@ import { AuthGuard } from "./shared/services/auth.guard";
       CreatePageComponent,
       EditPageComponent
     ],
-    providers: [AuthService,
-                AuthGuard]
+    providers: [AuthGuard]
 })
 
 export class AdminModule {
