@@ -11,8 +11,8 @@
 
     <div class="form-control"
          [ngClass]="{invalid: form.get('text')?.touched && form.get('text')?.invalid}">
-        <label for="text">Post content:</label>
-        <input id="text" type="text" formControlName="text">
+        <label for="text">Text:</label>
+        <textarea id="text" type="text" formControlName="text"></textarea>
         <div *ngIf="form.get('text')?.touched && form.get('text')?.invalid">
             <small>Text is required!</small>
         </div>
