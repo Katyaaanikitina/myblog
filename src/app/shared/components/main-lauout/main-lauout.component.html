@@ -1,5 +1,9 @@
 <nav class="navbar main">
-    <h1>Angular Blog</h1>
+    <h1>My Blog</h1>
+    <button 
+    [routerLink]="['/admin/login']"
+    class="btn btn-logIn"
+    >Log in</button>
 </nav>
 <div class="container">
     <router-outlet></router-outlet>
