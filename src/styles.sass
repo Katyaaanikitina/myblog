@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto')
 :root 
-  --primary-color: #dc3545
-  --dark-color: #333333
+  --primary-color: #abd6dfff
+  --dark-color: #001b3a
   --light-color: #f4f4f4
   --danger-color: #dc3545
   --success-color: #28a745
@@ -101,6 +101,7 @@ img
   margin-right: 0.5rem
   transition: opacity 0.2s ease-in
   outline: none
+  border-radius: 5px
 
   &:disabled 
     cursor: not-allowed
@@ -150,7 +151,7 @@ img
 .badge-primary,
 .alert-primary 
   background: var(--primary-color)
-  color: #fff
+  color: var(--dark-color)
 
 
 .btn-light,
@@ -213,14 +214,14 @@ img
   margin-bottom: .8rem
 
   &.invalid 
-    color: var(--primary-color)
+    color: var(--danger-color)
     input 
-      border-color: var(--primary-color)
+      border-color: var(--danger-color)
     
   
 
   .validation 
-    color: var(--primary-color)
+    color: var(--danger-color)
   
 
 
@@ -246,6 +247,8 @@ table
   width: 100%
   border-collapse: collapse
 
+table tbody th
+  font-weight: normal
 
 table th,
 table td 
@@ -268,8 +271,8 @@ table th
   margin-bottom: 1rem
 
   &.main 
-    justify-content: center
-    border-bottom: 1px solid var(--dark-color)
+    font-size: 25px
+    color: white
   
 
   ul 

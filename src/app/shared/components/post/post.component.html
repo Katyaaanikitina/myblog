@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
         <h2>{{post.title}}</h2>
-        <small>{{post.date | date:'dd:MM:yyyy'}}</small>
+        <small>{{post.date | date: 'short'}}</small>
     </div>
 
     <div>
@@ -10,7 +10,7 @@
 
     <button 
     [routerLink]="['/post', post.id]"
-    class="btn btn-dark"
+    class="btn"
     >Open post</button>
 
 </div>

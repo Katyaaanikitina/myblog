@@ -20,11 +20,11 @@
                 <th>{{post.date | date: 'medium':undefined:'pl' }}</th>
                 <th>
                     <button 
-                    class="btn btn-link open"
+                    class="btn btn-primary open bold"
                     [routerLink]="['/admin', 'post', post.id, 'edit']"
                     >Open</button>
 
-                    <a (click)="remove(post.id!)">Delete</a>
+                    <a class="btn btn-white" (click)="remove(post.id!)">Delete</a>
                 </th>
             </tr>
         </tbody>
