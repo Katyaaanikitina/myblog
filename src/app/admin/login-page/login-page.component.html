@@ -1,4 +1,4 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+<form class="card login-form" [formGroup]="form" (ngSubmit)="submit()">
     <h2>Log in admin's panel</h2>
     <div class="alert alert-info" *ngIf="message">{{message}}</div>
     <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
@@ -31,6 +31,6 @@
     </div>
     <button 
     [disabled]="form.invalid || submitted"
-    class="btn btn-primary"
+    class="btn btn-dark"
     >Log in</button>
 </form>

@@ -1,18 +1,20 @@
-<div class="post">
-    <div class="header">
-        <h1>Post title</h1>
-        <button routerLink="/" class="btn btn-link">Go home</button>
-    </div>
+<div *ngIf="post$ | async as post; else loading">
+    <div class="post">
+        <div class="header">
+            <h1>{{post.title}}</h1>
+            <button routerLink="/" class="btn">Go home</button>
+        </div>
 
-    <div class="info">
-        <strong>Athor</strong>
-        <small>03.01.2023</small>
-    </div>
+        <div class="info">
+            <strong>{{post.author}}</strong>
+            <small>{{post.date | date:'medium':undefined:'pl'}}</small>
+        </div>
 
-    <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe doloremque nihil, vel consequatur et a dicta vero quibusdam amet. Nesciunt quae corporis eligendi eaque sequi non atque, sunt ducimus perferendis, natus sit voluptatibus. Quo dicta atque cum, suscipit quisquam soluta sint! Ab eligendi ducimus delectus, libero consequuntur exercitationem saepe ullam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe doloremque nihil, vel consequatur et a dicta vero quibusdam amet. Nesciunt quae corporis eligendi eaque sequi non atque, sunt ducimus perferendis, natus sit voluptatibus. Quo dicta atque cum, suscipit quisquam soluta sint! Ab eligendi ducimus delectus, libero consequuntur exercitationem saepe ullam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe doloremque nihil, vel consequatur et a dicta vero quibusdam amet. Nesciunt quae corporis eligendi eaque sequi non atque, sunt ducimus perferendis, natus sit voluptatibus. Quo dicta atque cum, suscipit quisquam soluta sint! Ab eligendi ducimus delectus, libero consequuntur exercitationem saepe ullam!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe doloremque nihil, vel consequatur et a dicta vero quibusdam amet. Nesciunt quae corporis eligendi eaque sequi non atque, sunt ducimus perferendis, natus sit voluptatibus. Quo dicta atque cum, suscipit quisquam soluta sint! Ab eligendi ducimus delectus, libero consequuntur exercitationem saepe ullam!</p>
+        <div>
+            <p>{{post.text}}</p>
+        </div>
     </div>
 </div>
+<ng-template #loading>
+    <p class="text-center">Loading...</p>
+</ng-template>

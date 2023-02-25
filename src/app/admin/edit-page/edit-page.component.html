@@ -1,1 +1,34 @@
-<p>edit-page works!</p>
+<div *ngIf="form; else loading">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div [ngClass]="{invalid: form.get('title')?.touched && form.get('title')?.invalid}" class="form-control">
+            <label for="title">Title:</label>
+            <input id="title" type="text" formControlName="title">
+            <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+                <small>Title is required!</small>
+            </div>
+        </div>
+
+        <div [ngClass]="{invalid: form.get('author')?.touched && form.get('author')?.invalid}" class="form-control">
+            <label for="author">Author:</label>
+            <input id="author" type="text" formControlName="author">
+            <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+                <small>Author is required!</small>
+            </div>
+        </div>
+
+        <div [ngClass]="{invalid: form.get('text')?.touched && form.get('text')?.invalid}" class="form-control">
+            <label for="text">Text:</label>
+            <textarea id="text" type="text" formControlName="text" rows="5"></textarea>
+            <div *ngIf="form.get('text')?.touched && form.get('text')?.invalid">
+                <small>Text is required!</small>
+            </div>
+        </div>
+        <button class='btn btn-dark' type="submit" [disabled]="form.invalid || submitted">
+            Submit changes
+        </button>
+    </form>
+</div>
+<ng-template #loading>
+    <p class="text-center">Loading</p>
+</ng-template>
