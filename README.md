@@ -3,7 +3,7 @@ It's an online blog with an admin panel and authorization system to create, edit
 
 ![](https://github.com/Katyaaanikitina/myblog/blob/eaca438c47e56d76880d10a09359af4996551ef0/Blog.gif)
 
-##Features
+## Features
 * Web application with an admin panel and authorization system to create, edit and search posts
 * Built in Angular, Typescript, RxJS it interacts with Firebase 
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
